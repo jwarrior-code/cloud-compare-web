@@ -1,0 +1,264 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  :root {
+
+      --c-aws: #FF9900;
+      --c-azure: #0B83CA;
+
+      --c-white-p: #FFFFFF;
+      --c-black-p: #212121;
+
+      --c-brand-d-3: #001133;
+      --c-brand-d-2: #002266;
+      --c-brand-d-1: #003399;
+      --c-brand-c: #0044CC;
+      --c-brand-l-1: #0055FF;
+      --c-brand-l-2: #3377FF;
+      --c-brand-l-3: #6699FF;
+
+      --c-slate-5: #F8FAFC;
+      --c-slate-20: #E2E8F0;
+      --c-slate-40: #94A3B8;
+      --c-slate-50: #64748B;
+      --c-slate-60: #475569;
+      --c-slate-80: #1E293B;
+      --c-slate-90: #0F172A;
+
+      --c-alert-error-l: #FF666E;
+      --c-alert-success-l: #16A34A;
+      --c-alert-info-l: #4C8AFF;
+      --c-alert-warning-l: #F59E0B;
+      --c-alert-error-d: #DA1E28;
+      --c-alert-success-d: #16A34A;
+      --c-alert-info-d: #0150E4;
+      --c-alert-warning-d: #F59E0B;
+  }
+
+  .theme-light {
+      --c-fl-brand-d-3: var(--c-brand-d-3);
+      --c-fl-brand-d-2: var(--c-brand-d-2);
+      --c-fl-brand-d-1: var(--c-brand-d-1);
+      --c-fl-brand-c: var(--c-brand-c);
+      --c-fl-brand-l-1: var(--c-brand-l-1);
+      --c-fl-brand-l-2: var(--c-brand-l-2);
+      --c-fl-brand-l-3: var(--c-brand-l-3);
+
+      --c-fl-black-p: var(--c-black-p);
+      --c-fl-white-p: var(--c-white-p);
+
+      --c-fl-black: var(--c-slate-90);
+      --c-fl-white: var(--c-slate-5);
+
+      --c-fx-black: var(--c-slate-90);
+      --c-fx-white: var(--c-slate-5);
+
+      --c-fl-slate-5: var(--c-slate-5);
+      --c-fl-slate-20: var(--c-slate-20);
+      --c-fl-slate-40: var(--c-slate-40);
+      --c-fl-slate-50: var(--c-slate-50);
+      --c-fl-slate-60: var(--c-slate-60);
+      --c-fl-slate-80: var(--c-slate-80);
+      --c-fl-slate-90: var(--c-slate-90);
+
+      --c-fl-alert-error: var(--c-alert-error-d);
+      --c-fl-alert-success: var(--c-alert-success-d);
+      --c-fl-alert-info: var(--c-alert-info-d);
+      --c-fl-alert-warning: var(--c-alert-warning-d);
+  }
+}
+@layer utilities {
+  .theme-dark {
+      --c-fl-brand-d-3: var(--c-brand-l-3);
+      --c-fl-brand-d-2: var(--c-brand-l-2);
+      --c-fl-brand-d-1: var(--c-brand-l-1);
+      --c-fl-brand-c: var(--c-brand-c);
+      --c-fl-brand-l-1: var(--c-brand-d-1);
+      --c-fl-brand-l-2: var(--c-brand-d-2);
+      --c-fl-brand-l-3: var(--c-brand-d-3);
+
+      --c-fl-black-p: var(--c-white-p);
+      --c-fl-white-p: var(--c-black-p);
+
+      --c-fl-black: var(--c-slate-5);
+      --c-fl-white: var(--c-slate-90);
+
+      --c-fx-black: var(--c-slate-90);
+      --c-fx-white: var(--c-slate-5);
+
+      --c-fl-slate-5: var(--c-slate-90);
+      --c-fl-slate-20: var(--c-slate-80);
+      --c-fl-slate-40: var(--c-slate-60);
+      --c-fl-slate-50: var(--c-slate-50);
+      --c-fl-slate-60: var(--c-slate-40);
+      --c-fl-slate-80: var(--c-slate-20);
+      --c-fl-slate-90: var(--c-slate-5);
+
+      --c-fl-alert-error: var(--c-alert-error-l);
+      --c-fl-alert-success: var(--c-alert-success-l);
+      --c-fl-alert-info: var(--c-alert-info-l);
+      --c-fl-alert-warning: var(--c-alert-warning-l);
+  }
+}
+
+/*Import fonts*/
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url(assets/fonts/Rajdhani-SemiBold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  src: url(assets/fonts/Inter-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inter-Medium';
+  src: url(assets/fonts/Inter-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inter-SemiBold';
+  src: url(assets/fonts/Inter-SemiBold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Inter-Bold';
+  src: url(assets/fonts/Inter-Bold.ttf) format('truetype');
+}
+
+/*Buttons Global Styles*/
+
+.b-tab, .b-tab-on {
+  @apply h-full w-fit gap-1 rounded-full t-label-b flex items-center justify-center hover:border-c hover:text-white-fx hover:bg-c active:bg-d-1 disabled:bg-st-20 disabled:text-st-40 disabled:border-st-5 focus:outline-none focus:ring-2 focus:ring-d-1;
+}
+.b-tab {
+  @apply bg-white-p text-st-60;
+}
+.b-tab-on {
+  @apply bg-c text-white-fx;
+}
+.b-tab div, .b-tab-on div {
+  @apply w-5 h-5;
+}
+
+.b-small {
+  @apply px-2 py-1 h-fit w-fit bg-white-p border border-st-40 gap-1 rounded text-st-60 t-label-b flex items-center justify-center hover:border-c hover:text-white-fx hover:bg-c active:bg-d-1 disabled:bg-st-20 disabled:text-st-40 disabled:border-st-5 focus:outline-none focus:ring-2 focus:ring-d-1 whitespace-nowrap;
+}
+.b-small div {
+  @apply w-5 h-5;
+}
+
+.b-secondary div {
+  @apply w-6 h-6;
+}
+.b-secondary {
+  @apply px-2 h-10 bg-transparent border border-c gap-2 rounded text-st-90 t-body flex items-center justify-center hover:bg-white-p active:bg-st-5 disabled:text-st-40 disabled:border-st-20 focus:outline-none focus:ring-2 focus:ring-d-1 whitespace-nowrap;
+}
+
+.b-primary div {
+  @apply w-6 h-6;
+}
+.b-primary {
+  @apply px-2 h-10 bg-c border border-c gap-2 rounded text-white-fx t-body flex items-center justify-center hover:bg-d-1 active:bg-d-2 disabled:text-st-40 disabled:border-st-20 disabled:bg-st-20 focus:outline-none focus:ring-2 focus:ring-d-1 whitespace-nowrap;
+}
+
+.icon-warning div {
+  @apply text-alert-warning;
+}
+.icon-success div {
+  @apply text-alert-success;
+}
+.icon-info div {
+  @apply text-alert-info;
+}
+.icon-error div {
+  @apply text-alert-error;
+}
+
+.b-small-rounded-full {
+  @apply px-2 py-1 h-fit w-fit bg-white-p border border-st-40 space-x-1 rounded-full text-st-60 t-label-b flex items-center justify-center hover:border-c hover:text-white-fx hover:bg-c active:bg-d-1 disabled:bg-st-20 disabled:text-st-40 disabled:border-st-5 focus:outline-none focus:ring-2 focus:ring-d-1 whitespace-nowrap;
+}
+.b-small-rounded-full div {
+  @apply w-5 h-5;
+}
+
+/*Inputs Global Styles*/
+
+.input-ghost {
+  @apply rounded h-fit t-body text-st-90 p-2 hover:border-c focus:outline-none focus:ring-1 focus:ring-c disabled:text-st-40 disabled:border-st-20 active:bg-st-5 w-full placeholder:text-st-40
+}
+
+.input-form {
+  @apply flex flex-col space-y-1;
+}
+.input-form label {
+  @apply text-c t-label text-left
+}
+
+.input-form input, .input-form select, .input-form textarea {
+  @apply rounded h-fit border border-st-40 t-body text-st-90 p-2 bg-white-p hover:border-c focus:outline-none focus:ring-1 focus:ring-c disabled:text-st-40 disabled:border-st-20 active:bg-st-5 w-full placeholder:text-st-40
+}
+
+.input-form .warning, .input-form .success, .input-form .info, .input-form .error {
+  @apply flex items-center space-x-1 t-label text-st-60
+}
+.input-form .success div {
+  @apply w-4 h-4 text-alert-success
+}
+.input-form .warning div {
+  @apply w-4 h-4 text-alert-warning
+}
+.input-form .info div {
+  @apply w-4 h-4 text-alert-info
+}
+.input-form .error div {
+  @apply w-4 h-4 text-alert-error
+}
+
+.input-only {
+  @apply rounded border border-st-40 t-body text-st-90 px-2 h-8 bg-white-p hover:border-c focus:outline-none focus:ring-1 focus:ring-c disabled:text-st-40 disabled:border-st-20 active:bg-st-5 w-full placeholder:text-st-40
+}
+
+.tag-subtitle {
+  @apply flex items-center text-left t-subtitle text-st-90 space-x-2
+}
+.tag-subtitle div {
+  @apply rounded-sm w-2 h-6 bg-c
+}
+
+
+*:disabled {
+  pointer-events: none;
+}
+
+
+
+.table-cebra {
+  @apply w-full
+}
+
+.table-cebra th {
+  @apply t-label-b text-c text-left p-2
+}
+
+.table-cebra td {
+  @apply p-2 t-body text-st-90
+}
+
+.table-cebra tbody tr:nth-child(odd) {
+  @apply bg-st-5
+}
+
+.table-cebra tbody tr {
+  @apply hover:bg-st-20 t-body text-st-60
+}
+
+.h-screen-compare-sm {
+  max-height: calc(100vh - 65px - 32px - 32px - 32px - 48px - 32px);
+}
+.h-screen-compare {
+  max-height: calc(100vh - 65px - 32px - 32px - 32px);
+}
